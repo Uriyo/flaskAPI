@@ -94,4 +94,4 @@ alembic/
 # Virtual Environment
 venv/
 
-config.py
+keys.txt

@@ -19,4 +19,5 @@ app.register_blueprint(user_bp)
 app.register_blueprint(contact_bp)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

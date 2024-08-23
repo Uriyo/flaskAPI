@@ -10,9 +10,9 @@ user_bp = Blueprint('user_bp', __name__)
 def signup():
     data = request.get_json()
     name = data.get('name')
-    email = data.get('email')
+    email = data.get('email').lower()
     password = data.get('password')
-
+    
     if not name:
         return jsonify({"message": "Name cannot be left blank", "data": {}}), 400
     if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
